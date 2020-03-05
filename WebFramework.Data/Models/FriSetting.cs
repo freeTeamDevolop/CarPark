@@ -7,11 +7,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebFramework.Data.Models
 {
-    [Table("Users")]
-    public partial class Users
+    [Table("FriSetting")]
+    public partial class FriSetting
     {
         public long id { get; set; }
-        public string userName { get; set; }
-        public string carNumber { get; set; }
+        public string qrInfo { get; set; }
+        public System.TimeSpan timeStart { get; set; }
+        public System.TimeSpan timeEnd { get; set; }
+        public decimal price { get; set; }
     }
 }

@@ -10,7 +10,7 @@ using WebFramework.WebApiControllers.Services.Users;
 
 namespace WebFramework.WebApiControllers.Controllers
 {
-    [RoutePrefix("api/Core/Users")]
+    [RoutePrefix("api/CarParkProject/Users")]
     public class UsersController:ApiCoreController
     {
         private readonly IUsersService _usersService;

@@ -7,11 +7,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebFramework.Data.Models
 {
-    [Table("Users")]
-    public partial class Users
+    [Table("CarParkSetting")]
+    public partial class CarParkSetting
     {
         public long id { get; set; }
-        public string userName { get; set; }
-        public string carNumber { get; set; }
+        public string carParkName { get; set; }
+        public string qrInfo { get; set; }
     }
 }

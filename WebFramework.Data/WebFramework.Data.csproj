@@ -73,7 +73,16 @@
     <Compile Include="Infrastructure\IRepository.cs" />
     <Compile Include="Infrastructure\ITransactionManager.cs" />
     <Compile Include="Infrastructure\Repository.cs" />
+    <Compile Include="Models\CarParkOrder.cs" />
+    <Compile Include="Models\CarParkSetting.cs" />
+    <Compile Include="Models\FriSetting.cs" />
+    <Compile Include="Models\MonSetting.cs" />
+    <Compile Include="Models\SatSetting.cs" />
+    <Compile Include="Models\SunSetting.cs" />
+    <Compile Include="Models\ThurSetting.cs" />
+    <Compile Include="Models\TuesSetting.cs" />
     <Compile Include="Models\Users.cs" />
+    <Compile Include="Models\WedSetting.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
