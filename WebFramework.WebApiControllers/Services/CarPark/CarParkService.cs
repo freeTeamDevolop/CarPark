@@ -177,7 +177,10 @@ namespace WebFramework.WebApiControllers.Services.CarPark
         {
             var result = RequestResult<List<CarParkSettingListResult>>.Get();
 
+            switch (model.week)
+            {
 
+            }
 
             return result;
         }
