@@ -24,5 +24,11 @@ namespace WebFramework.WebApiControllers.Controllers
         {
             return F(() => _usersService.isValidUser());
         }
+
+        [HttpGet]
+        public RequestResult<List<UserResult>> GetUserInfo()
+        {
+            return F(() => _usersService.GetUserInfo());
+        }
     }
 }

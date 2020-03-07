@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Web;
 using System.Web.Http;
+using WebFramework.Data.Infrastructure;
 
 namespace WebFramework.App_Start
 {
@@ -59,12 +60,13 @@ namespace WebFramework.App_Start
 
             //// 告诉autofac框架注册数据仓储层所在程序集中的所有类的对象实例
 
-            //Assembly RepositoryAssembly = Assembly.Load("CommonManagement.Repository");
+            Assembly RepositoryAssembly = Assembly.Load("WebFramework.Data");
 
             //// 创建仓储层中的所有类的instance以此类的实现接口存储
 
-            //builder.RegisterTypes(RepositoryAssembly.GetTypes()).Where(a => a.Name.Contains("Repository")).AsImplementedInterfaces();
 
+            builder.RegisterTypes(RepositoryAssembly.GetTypes()).Where(a => a.Name.Contains("Repository")).AsImplementedInterfaces();
+            //builder.RegisterGeneric(typeof(Repository<>)).As(typeof(IRepository<>)).InstancePerDependency();
 
 
             // 告诉autofac框架注册数据业务层(应用层)所在程序集中的所有类的对象实例

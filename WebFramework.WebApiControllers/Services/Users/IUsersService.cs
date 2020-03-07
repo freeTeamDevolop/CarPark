@@ -9,5 +9,7 @@ namespace WebFramework.WebApiControllers.Services.Users
     public interface IUsersService
     {
         bool isValidUser();
+
+        List<UserResult> GetUserInfo();
     }
 }

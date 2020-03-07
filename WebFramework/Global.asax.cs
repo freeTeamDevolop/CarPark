@@ -12,6 +12,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using WebFramework.App_Start;
+using WebFramework.Data.Configuration;
 using WebFramework.WebApiControllers.Configuration;
 
 namespace WebFramework
@@ -55,6 +56,12 @@ namespace WebFramework
             builder.RegisterApiControllers(Assembly.Load("WebFramework.WebApiControllers"));
 
             AutofacBuilder.SetupResolveRules(builder);
+
+            builder.RegisterAssemblyTypes(Assembly.Load("WebFramework.Data"), Assembly.Load("WebFramework.Data"))
+                .Where(t => t.Name.EndsWith("Repository"))
+                .AsImplementedInterfaces();
+            AutofacBuilderRepository.SetupResolveRules(builder);
+
 
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly()).PropertiesAutowired();
 

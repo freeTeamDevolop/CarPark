@@ -73,6 +73,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WebFramework.Data\WebFramework.Data.csproj">
+      <Project>{d5a69aa4-73d0-4df6-9c8c-b661f8b96ddb}</Project>
+      <Name>WebFramework.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WebFramework.Framework\WebFramework.Framework.csproj">
       <Project>{04c620b2-acab-4fb8-a5e7-444b56e65baa}</Project>
       <Name>WebFramework.Framework</Name>

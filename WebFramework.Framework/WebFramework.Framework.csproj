@@ -55,6 +55,8 @@
     <Compile Include="Data\PerformanceAnalysisData.cs" />
     <Compile Include="Data\RequestResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\AES\AESHelper.cs" />
+    <Compile Include="Utilities\HttpMethod\HttpHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
