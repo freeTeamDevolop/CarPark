@@ -60,11 +60,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\AutofacBuilder.cs" />
-    <Compile Include="Controllers\CarParkController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\CarPark\CarParkService.cs" />
-    <Compile Include="Services\CarPark\ICarParkService.cs" />
     <Compile Include="Services\Users\IUsersService.cs" />
     <Compile Include="Services\Users\UsersService.cs" />
   </ItemGroup>
