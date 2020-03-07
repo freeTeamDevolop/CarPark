@@ -14,11 +14,14 @@ namespace WebFramework.WebApiControllers.ViewModels.CarPark
 
         public string qrInfo { get; set; }
 
+
         public List<AreaSetting> areaSettings { get; set; }
     }
 
     public class AreaSetting
     {
+        public long id { get; set; }
+
         public System.TimeSpan timeStart { get; set; }
 
         public System.TimeSpan timeEnd { get; set; }

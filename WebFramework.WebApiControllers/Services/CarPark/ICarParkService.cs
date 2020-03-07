@@ -13,5 +13,7 @@ namespace WebFramework.WebApiControllers.Services.CarPark
         RequestResult<bool> CarParkSetting(CarParkSettingModel model);
 
         RequestResult<ScanCodeResult> GetScanCodeResult(CarParkGetViewModel model);
+
+        RequestResult<List<CarParkSettingListResult>> GetCarParkSettingList(CarParkSettingListViewModel model);
     }
 }

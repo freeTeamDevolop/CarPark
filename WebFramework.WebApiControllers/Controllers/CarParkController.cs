@@ -33,5 +33,12 @@ namespace WebFramework.WebApiControllers.Controllers
         {
             return F(() => _carParkService.GetScanCodeResult(model));
         }
+
+        [HttpPost]
+        [Route("GetCarParkSettingList")]
+        public RequestResult<List<CarParkSettingListResult>> GetCarParkSettingList(CarParkSettingListViewModel model)
+        {
+            return F(() => _carParkService.GetCarParkSettingList(model));
+        }
     }
 }

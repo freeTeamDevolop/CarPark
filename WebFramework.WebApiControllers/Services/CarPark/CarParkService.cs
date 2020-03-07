@@ -51,6 +51,98 @@ namespace WebFramework.WebApiControllers.Services.CarPark
                 return result;
             }
 
+            //编辑设置信息
+            if(!string.IsNullOrEmpty(model.qrInfo))
+            {
+                var carParkSettings = _carParkSettingRepo.Table.FirstOrDefault(_ => _.qrInfo == model.qrInfo);
+                carParkSettings.carParkName = model.carParkName;
+
+                switch (model.week)
+                {
+                    case "Monday":
+
+                        foreach (var item in model.areaSettings)
+                        {
+                            var set = _monSettingRepo.Table.FirstOrDefault(_ => _.id == item.id && _.qrInfo == model.qrInfo);
+                            set.timeStart = item.timeStart;
+                            set.timeEnd = item.timeEnd;
+                            set.price = item.price;
+                            _monSettingRepo.Flush();
+                        }
+                        
+                        break;
+
+                    case "Tuesday":
+                        foreach (var item in model.areaSettings)
+                        {
+                            var set = _tuesSettingRepo.Table.FirstOrDefault(_ => _.id == item.id && _.qrInfo == model.qrInfo);
+                            set.timeStart = item.timeStart;
+                            set.timeEnd = item.timeEnd;
+                            set.price = item.price;
+                            _tuesSettingRepo.Flush();
+                        }
+                        break;
+
+                    case "Wednesday":
+                        foreach (var item in model.areaSettings)
+                        {
+                            var set = _wedSettingRepo.Table.FirstOrDefault(_ => _.id == item.id && _.qrInfo == model.qrInfo);
+                            set.timeStart = item.timeStart;
+                            set.timeEnd = item.timeEnd;
+                            set.price = item.price;
+                            _wedSettingRepo.Flush();
+                        }
+                        break;
+
+                    case "Thursday":
+                        foreach (var item in model.areaSettings)
+                        {
+                            var set = _thurSettingRepo.Table.FirstOrDefault(_ => _.id == item.id && _.qrInfo == model.qrInfo);
+                            set.timeStart = item.timeStart;
+                            set.timeEnd = item.timeEnd;
+                            set.price = item.price;
+                            _thurSettingRepo.Flush();
+                        }
+                        break;
+
+                    case "Friday":
+                        foreach (var item in model.areaSettings)
+                        {
+                            var set = _friSettingRepo.Table.FirstOrDefault(_ => _.id == item.id && _.qrInfo == model.qrInfo);
+                            set.timeStart = item.timeStart;
+                            set.timeEnd = item.timeEnd;
+                            set.price = item.price;
+                            _friSettingRepo.Flush();
+                        }
+                        break;
+
+                    case "Saturday":
+                        foreach (var item in model.areaSettings)
+                        {
+                            var set = _satSettingRepo.Table.FirstOrDefault(_ => _.id == item.id && _.qrInfo == model.qrInfo);
+                            set.timeStart = item.timeStart;
+                            set.timeEnd = item.timeEnd;
+                            set.price = item.price;
+                            _satSettingRepo.Flush();
+                        }
+                        break;
+
+                    case "Sunday":
+                        foreach (var item in model.areaSettings)
+                        {
+                            var set = _sunSettingRepo.Table.FirstOrDefault(_ => _.id == item.id && _.qrInfo == model.qrInfo);
+                            set.timeStart = item.timeStart;
+                            set.timeEnd = item.timeEnd;
+                            set.price = item.price;
+                            _sunSettingRepo.Flush();
+                        }
+                        break;
+                }
+                result.result = true;
+                result.success = true;
+                return result;
+            }
+
             CarParkSetting setting = new CarParkSetting();
 
             var qrInfo = Guid.NewGuid().ToString("N");
@@ -169,7 +261,7 @@ namespace WebFramework.WebApiControllers.Services.CarPark
         }
 
         /// <summary>
-        /// 获取停车场设置信息111
+        /// 获取停车场设置信息
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
@@ -179,13 +271,92 @@ namespace WebFramework.WebApiControllers.Services.CarPark
 
             switch (model.week)
             {
+                case "Monday":
+                    result.result = _monSettingRepo.Table.Where(_ => _.qrInfo == model.qrInfo).Select(_ => new CarParkSettingListResult
+                    {
+                        id = _.id,
+                        qrInfo = _.qrInfo,
+                        timeStart = _.timeStart,
+                        timeEnd = _.timeEnd,
+                        price = _.price
+                    }).ToList();
+                    break;
 
+                case "Tuesday":
+                    result.result = _tuesSettingRepo.Table.Where(_ => _.qrInfo == model.qrInfo).Select(_ => new CarParkSettingListResult
+                    {
+                        id = _.id,
+                        qrInfo = _.qrInfo,
+                        timeStart = _.timeStart,
+                        timeEnd = _.timeEnd,
+                        price = _.price
+                    }).ToList();
+                    break;
+
+                case "Wednesday":
+                    result.result = _wedSettingRepo.Table.Where(_ => _.qrInfo == model.qrInfo).Select(_ => new CarParkSettingListResult
+                    {
+                        id = _.id,
+                        qrInfo = _.qrInfo,
+                        timeStart = _.timeStart,
+                        timeEnd = _.timeEnd,
+                        price = _.price
+                    }).ToList();
+                    break;
+
+                case "Thursday":
+                    result.result = _thurSettingRepo.Table.Where(_ => _.qrInfo == model.qrInfo).Select(_ => new CarParkSettingListResult
+                    {
+                        id = _.id,
+                        qrInfo = _.qrInfo,
+                        timeStart = _.timeStart,
+                        timeEnd = _.timeEnd,
+                        price = _.price
+                    }).ToList();
+                    break;
+
+                case "Friday":
+                    result.result = _friSettingRepo.Table.Where(_ => _.qrInfo == model.qrInfo).Select(_ => new CarParkSettingListResult
+                    {
+                        id = _.id,
+                        qrInfo = _.qrInfo,
+                        timeStart = _.timeStart,
+                        timeEnd = _.timeEnd,
+                        price = _.price
+                    }).ToList();
+                    break;
+
+                case "Saturday":
+                    result.result = _satSettingRepo.Table.Where(_ => _.qrInfo == model.qrInfo).Select(_=> new CarParkSettingListResult
+                    {
+                        id = _.id,
+                        qrInfo = _.qrInfo,
+                        timeStart= _.timeStart,
+                        timeEnd = _.timeEnd,
+                        price = _.price
+                    }).ToList();
+                    break;
+
+                case "Sunday":
+                    result.result = _sunSettingRepo.Table.Where(_ => _.qrInfo == model.qrInfo).Select(_ => new CarParkSettingListResult
+                    {
+                        id = _.id,
+                        qrInfo = _.qrInfo,
+                        timeStart = _.timeStart,
+                        timeEnd = _.timeEnd,
+                        price = _.price
+                    }).ToList();
+                    break;
             }
 
             return result;
         }
 
-
+        /// <summary>
+        /// 通过扫码得知该停车场对应信息
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         public RequestResult<ScanCodeResult> GetScanCodeResult(CarParkGetViewModel model)
         {
             var result = RequestResult<ScanCodeResult>.Get();
