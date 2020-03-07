@@ -168,7 +168,11 @@ namespace WebFramework.WebApiControllers.Services.CarPark
             return result;
         }
 
-
+        /// <summary>
+        /// 获取停车场设置信息
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         public RequestResult<List<CarParkSettingListResult>> GetCarParkSettingList(CarParkSettingListViewModel model)
         {
             var result = RequestResult<List<CarParkSettingListResult>>.Get();
