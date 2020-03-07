@@ -34,7 +34,11 @@ namespace WebFramework.WebApiControllers.Services.CarPark
             this._sunSettingRepo = _sunSettingRepo;
         }
 
-
+        /// <summary>
+        /// 设置停车场信息
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         public RequestResult<bool> CarParkSetting(CarParkSettingModel model)
         {
             var result = RequestResult<bool>.Get();
@@ -163,6 +167,17 @@ namespace WebFramework.WebApiControllers.Services.CarPark
             result.result = true;
             return result;
         }
+
+
+        public RequestResult<List<CarParkSettingListResult>> GetCarParkSettingList(CarParkSettingListViewModel model)
+        {
+            var result = RequestResult<List<CarParkSettingListResult>>.Get();
+
+
+
+            return result;
+        }
+
 
         public RequestResult<ScanCodeResult> GetScanCodeResult(CarParkGetViewModel model)
         {

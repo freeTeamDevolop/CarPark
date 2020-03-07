@@ -68,6 +68,8 @@
     <Compile Include="Services\Users\IUsersService.cs" />
     <Compile Include="Services\Users\UsersService.cs" />
     <Compile Include="ViewModels\CarPark\CarParkGetViewModel.cs" />
+    <Compile Include="ViewModels\CarPark\CarParkSettingListResult.cs" />
+    <Compile Include="ViewModels\CarPark\CarParkSettingListViewModel.cs" />
     <Compile Include="ViewModels\CarPark\CarParkSettingModel.cs" />
     <Compile Include="ViewModels\CarPark\ScanCodeResult.cs" />
   </ItemGroup>
