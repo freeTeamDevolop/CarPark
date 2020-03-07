@@ -21,7 +21,7 @@ namespace WebFramework.WebApiControllers.Services.Users
 
         public bool isValidUser()
         {
-            return true;
+            return false;
         }
 
         public List<UserResult> GetUserInfo()
