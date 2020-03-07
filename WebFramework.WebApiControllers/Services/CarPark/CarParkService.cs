@@ -35,7 +35,7 @@ namespace WebFramework.WebApiControllers.Services.CarPark
         }
 
         /// <summary>
-        /// 设置停车场信息
+        /// 新增修改停车场信息
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
