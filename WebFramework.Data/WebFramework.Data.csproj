@@ -73,6 +73,7 @@
     <Compile Include="Infrastructure\IRepository.cs" />
     <Compile Include="Infrastructure\ITransactionManager.cs" />
     <Compile Include="Infrastructure\Repository.cs" />
+    <Compile Include="Models\AppKey.cs" />
     <Compile Include="Models\CarParkOrder.cs" />
     <Compile Include="Models\CarParkSetting.cs" />
     <Compile Include="Models\FriSetting.cs" />

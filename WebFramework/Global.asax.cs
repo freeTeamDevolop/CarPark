@@ -13,6 +13,8 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using WebFramework.App_Start;
 using WebFramework.Data.Configuration;
+using WebFramework.Framework.Api.Filters;
+using WebFramework.Framework.MVC.Filter;
 using WebFramework.WebApiControllers.Configuration;
 
 namespace WebFramework
@@ -69,6 +71,11 @@ namespace WebFramework
 
             GlobalConfiguration.Configuration.DependencyResolver = new AutofacWebApiDependencyResolver(container);
 
+            //×¢²áAttribute
+            var filters = GlobalConfiguration.Configuration.Filters;
+            filters.Add(new SecurityFilter()); // global secruity filter    
+
+            GlobalFilters.Filters.Add(new GlobalMvcFilter());
 
         }
     }
