@@ -26,5 +26,7 @@ namespace WebFramework.Data
         public virtual DbSet<TuesSetting> TuesSetting { get; set; }
         public virtual DbSet<Users> Users { get; set; }
         public virtual DbSet<WedSetting> WedSetting { get; set; }
+
+        public virtual DbSet<WfAppKey> WfAppKey { get; set; }
     }
 }
