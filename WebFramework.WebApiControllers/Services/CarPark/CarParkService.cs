@@ -353,7 +353,7 @@ namespace WebFramework.WebApiControllers.Services.CarPark
         }
 
         /// <summary>
-        /// 通过扫码得知该停车场对应信息test111111
+        /// 通过扫码得知该停车场对应信息test111111123
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
